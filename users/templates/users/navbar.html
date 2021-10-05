@@ -1,0 +1,82 @@
+<style>
+    *{
+padding: 0;
+margin: 0;
+text-decoration: none;
+list-style: none;
+box-sizing: border-box;
+
+}
+body{
+font-family: sans-serif;
+}
+nav{
+background: black;
+/* color: crimson; */
+height: 80px;
+width: 100%;
+}
+label.logo{
+color: darkcyan;
+font-size: 35px;
+line-height: 80px;
+padding:0 100px;
+font-weight: bold;
+}
+nav ul{
+float: right;
+margin-right: 25px;
+}
+nav ul li{
+display: inline-block;
+line-height: 80px;
+margin: 0 15px;
+}
+nav ul li a{
+position: relative;
+color: white;
+font-size: 18px;
+padding: 5px 0;
+/* border-radius: 3px; */
+text-transform: uppercase;
+}
+/* a.active, a:hover{
+background: white;
+color: black;
+transition: .5s;
+} */
+nav ul li a::before{
+position: absolute;
+content: '';
+left: 0;
+bottom: 0;
+height: 3px;
+width: 100%;
+background: white;
+transform: scaleX(0);
+transform-origin: right;
+transition: transform .4s linear;
+}
+nav ul li a:hover::before{
+transform: scaleX(1);
+transform-origin: left;
+}
+
+</style>
+
+<nav>
+    <label class="logo">BeEcofriendly</label>
+    <ul>
+    <li><a class="active" href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'joinDrive' %}">Drives</a></li>
+    {% if not request.user.is_authenticated %}
+    <li><a href="{% url 'login' %}">login</a></li>
+    <li><a href="{% url 'register' %}">Signup</a></li>
+    {% else %}
+    <li><a href="{% url 'profile' %}">Profile</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+    {% endif %}
+    <li><a href="{% url 'ourTeam' %}">Our Team</a></li>
+    
+    </ul>
+</nav>
