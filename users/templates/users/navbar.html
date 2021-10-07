@@ -1,82 +1,105 @@
 <style>
-    *{
-padding: 0;
-margin: 0;
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    nav {
+        background: black;
+        /* color: crimson; */
+        height: 80px;
+        width: 100%;
+    }
+
+    label.logo {
+        color: darkcyan;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold;
+    }
+
+    nav ul {
+        float: right;
+        margin-right: 25px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 15px;
+    }
+
+    nav ul li a,
+    .btn-link {
+        position: relative;
+        color: white;
+        font-size: 18px;
+        padding: 5px 0;
+        /* border-radius: 3px; */
+        text-transform: uppercase;
+    }
+
+    a:hover{
+color: rgb(187, 186, 186);
 text-decoration: none;
-list-style: none;
-box-sizing: border-box;
-
-}
-body{
-font-family: sans-serif;
-}
-nav{
-background: black;
-/* color: crimson; */
-height: 80px;
-width: 100%;
-}
-label.logo{
-color: darkcyan;
-font-size: 35px;
-line-height: 80px;
-padding:0 100px;
-font-weight: bold;
-}
-nav ul{
-float: right;
-margin-right: 25px;
-}
-nav ul li{
-display: inline-block;
-line-height: 80px;
-margin: 0 15px;
-}
-nav ul li a{
-position: relative;
-color: white;
-font-size: 18px;
-padding: 5px 0;
-/* border-radius: 3px; */
-text-transform: uppercase;
-}
-/* a.active, a:hover{
-background: white;
-color: black;
 transition: .5s;
-} */
-nav ul li a::before{
-position: absolute;
-content: '';
-left: 0;
-bottom: 0;
-height: 3px;
-width: 100%;
-background: white;
-transform: scaleX(0);
-transform-origin: right;
-transition: transform .4s linear;
 }
-nav ul li a:hover::before{
-transform: scaleX(1);
-transform-origin: left;
-}
+    nav ul li a::before,
+    .btn-link::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 100%;
+        background: white;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform .4s linear;
+    }
 
+    nav ul li a:hover::before,
+    .btn-link:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+        text-decoration: none;
+    }
 </style>
 
 <nav>
     <label class="logo">BeEcofriendly</label>
     <ul>
-    <li><a class="active" href="{% url 'home' %}">Home</a></li>
-    <li><a href="{% url 'joinDrive' %}">Drives</a></li>
-    {% if not request.user.is_authenticated %}
-    <li><a href="{% url 'login' %}">login</a></li>
-    <li><a href="{% url 'register' %}">Signup</a></li>
-    {% else %}
-    <li><a href="{% url 'profile' %}">Profile</a></li>
-    <li><a href="{% url 'logout' %}">Logout</a></li>
-    {% endif %}
-    <li><a href="{% url 'ourTeam' %}">Our Team</a></li>
-    
+        <li><a class="active" href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'joinDrive' %}">Drives</a></li>
+        {% if not request.user.is_authenticated %}
+        <li><a  onclick="document.getElementById('id01').style.display='block'" style="color: white;">login</a></li> 
+        <li><a href="{% url 'register' %}">Signup</a></li>
+        {% else %}
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% endif %}
+        <li><a href="{% url 'ourTeam' %}">Our Team</a></li>
+
     </ul>
 </nav>
+{% if message %}
+<script>
+    alert("{{message}}")
+</script>
+{% endif %}
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{% include 'users/login.html' %}
