@@ -31,7 +31,7 @@ def login(request):
         else:
             return render(request, 'users/home.html', {'message': "Invalid Credentials!"})
     print("not post")
-    return redirect(reverse("home"))
+    # return redirect(reverse("home"))
 
 
 
