@@ -15,15 +15,11 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title></title>
 </head>
-
 <body>
 
     <div class="container container-fluid container-1 mt-4">
         <form>
             <div class="form-group">
-              <div class="form-group ">
-                <input type="text" class="form-control custom-ip" id="" placeholder="Name">
-              </div>
               <div class="form-group ">
                 <input type="text" class="form-control custom-ip" id="" placeholder="Drive Name">
               </div>
@@ -31,19 +27,11 @@
             <div class="form-group">
               <input type="text" class="form-control custom-ip" id="" placeholder="Location">
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity"  class="label-text">City</label>
-                <input type="text" class="form-control custom-ip" id="">
-              </div>
-              <div class="form-group col-md-4">
-                <label for="inputState" class="label-text">State</label>
-                <input type="text" class="form-control custom-ip" id="">
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputZip"  class="label-text">Zip</label>
-                <input type="text" class="form-control custom-ip" id="inputZip">
-              </div>
+            <div class="form-group">
+              <input type="text" class="form-control custom-ip" id="" placeholder="Target">
+            </div>
+            <div class="form-group">
+              <input class="form-control custom-ip"  type="text-area" id="" placeholder="Description" type="textarea">
             </div>
             <div class="form-group">
             </div>
@@ -63,26 +51,25 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
 *{
-    overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 body{
     background: rgb(38, 146, 28);
 }
 .container-1{
-    margin-top: 5% !important;
+    margin-top: 10% !important;
     padding: 60px;
     background-image: url(https://t4.ftcdn.net/jpg/02/91/88/37/360_F_291883797_GGmcj8bGJpbTmZhErvS92ZEbGi0D512B.jpg);
     background-size: cover;
-
 }
 .custom-ip{
-    background-color: transparent;
-    color: white;
+    color: white !important;
     border: none;
     border-bottom:2px solid white;
+    background: transparent !important  ;
 }
 .custom-ip::placeholder{
-    color: white;
+    color: white !important;
 }
 .label-text{
     color: white;
