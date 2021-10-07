@@ -4,5 +4,5 @@ from django.contrib import admin
 from .models import *
 
 admin.site.register(Drive)
-admin.site.register(Planter)
+# admin.site.register(Planter)
 admin.site.register(Post)

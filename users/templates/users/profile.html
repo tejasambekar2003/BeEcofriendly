@@ -1,13 +1,12 @@
-{% extends 'users/layout.html' %}
+{% include 'users/navbar.html' %}
 
     {% block content %} 
-   <body>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <div class="wrapper">
         <div class="left">
-            <img src="https://lh3.googleusercontent.com/proxy/JSDCiXHSjpzUPtXw9chKJJSUPyKgxGzL800bcvF6VWaBZI3iMYzsRjtOaY78Qq--fbkPsSb0aRaEVprScbV8yfcaBrojdBPlw_dBrAIXoTw6tReAoW5UOTdrS59sTRMJ"
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                 alt="user" width="100">
-            <h4>Tejas Ambekar</h4>
+            <h4>{{user.first_name}}</h4>
         </div>
         <div class="right">
             <div class="info">
@@ -15,7 +14,7 @@
                 <div class="info_data">
                     <div class="data">
                         <h4>Email</h4>
-                        <p>tejasambekar2003@gmail.com</p>
+                        <p>{{user.email}}</p>
                     </div>
                 </div>
             </div>
@@ -23,7 +22,7 @@
                 <div class="projects_data">
                     <div class="data">
                         <h4>Instagram ID</h4>
-                        <p>tejasambekar2003</p>
+                        <p>{{user.username}}</p>
                     </div>
                 </div>
             </div>
@@ -45,9 +44,8 @@
             </div>
         </div>
     </div>
-</body>
-<style>
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 *{
   margin: 0;
@@ -144,6 +142,5 @@ body{
   margin-bottom: 10px;
   color: #919aa3;
 }
-
-</style>
+    </style>
     {% endblock %}

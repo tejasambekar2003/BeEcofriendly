@@ -18,15 +18,21 @@ def login(request):
         email = request.POST['email']    
         password = request.POST['password']
         users = User.objects.filter(email=email).first()
-        username = users.username
-        user =  authenticate(request, username=username, password=password)
-        if user is not None:
-            login_User(request, user)
-            return redirect(reverse("home"))
+        if users is not None:
+            username = users.username
+            user =  authenticate(request, username=username, password=password)
+            if user is not None:
+                print("user is not none true")
+                login_User(request, user)
+                return redirect(reverse("home"))
+            else:
+                print("error message wala")
+                return render(request, 'users/home.html', {'message': "Invalid Credentials!"})
         else:
-            return render(request, 'users/login.html', {'message': "Invalid Credentials!"})
-    
-    return render(request, 'users/login.html')
+            return render(request, 'users/home.html', {'message': "Invalid Credentials!"})
+    print("not post")
+    # return redirect(reverse("home"))
+
 
 
 def logout(request):
@@ -131,5 +137,7 @@ def posts(request):
     }
     return render(request, 'users/blog.html', context)
 
-def adrive(request):
-    return render(request, 'users/drive_temp.html')
+def indi_drive_join(request, drive_pk):
+    drive = Drive.objects.get(pk=drive_pk)
+    context = {'drive': drive}
+    return render(request, 'users/drive_temp.html', context)

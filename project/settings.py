@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-=c1b$pg*-y4c$5q^by5novxf-eb+&9_r$%8j6&0(l$!^%(*^%*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['be-ecofriendly.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -74,10 +74,19 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test',
+        'USER': 'postgres',
+        'PASSWORD': 'bvsj5208',
+        'HOST': 'localhost',
     }
 }
 
@@ -132,3 +141,8 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+import django_heroku
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

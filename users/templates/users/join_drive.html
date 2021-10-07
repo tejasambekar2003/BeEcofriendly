@@ -1,109 +1,90 @@
 {% extends 'users/layout.html' %}
 
-    {% block content %} 
-    <body>
-    <h1 id="drive">Join Plantation Drive</h1>
-    <div class="container">
-        <h1>NSS Drive</h1>
+{% block content %}
+<h1 id="drive">Join Plantation Drive</h1>
+
+<div class="container"></div>
+{% for drive in drives %}
+<div class="row container1">
+    <div class="col-sm">
+        <h1>{{drive.drive_name}}</h1>
         <div id="firstpara">
-            <p>Location: PICT Pune</p>
-            <p>Target: 25</p>
-            <form action="#" method="post" >
-                <a href="" class="join" >Join</a>
-            </form>
+            <p>Location: {{drive.location}}</p>
+            <p>Target: {{drive.target}} Trees</p>
+            <a href="{% url 'join_drive_temp' drive.pk %}" class="join">Join</a>
         </div>
     </div>
+</div>
+{% endfor %}
+</div>
 
-    <div class="container">
-        <h1>Pictosocial Drive</h1>
-        <div id="secondpara">
-            <p>Location: PICT Pune</p>
-            <p>Target: 20</p>
-            <form action="#" method="post" >
-                <a href="" class="join" >Join</a>
-            </form>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1>Debsoc Drive</h1>
-        <div id="thirdpara">
-            <p>Location: PICT Pune</p>
-            <p>Target: 15</p>
-            <form action="#" method="post" >
-                <a href="" class="join" >Join</a>
-            </form>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1>RSS Drive</h1>
-        <div id="thirdpara">
-            <p>Location: PICT Pune</p>
-            <p>Target: 15</p>
-            <form action="#" method="post" >
-                <a href="" class="join" >Join</a>
-            </form>
-        </div>
-    </div>
-</body>
 <style>
-        * {
-            box-sizing: border-box;
-            padding: 0px;
-            margin: 0px;
-        }
+    * {
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+    }
 
-        body {
-            background-image: url(https://media.istockphoto.com/photos/farmers-hand-watering-a-young-plant-picture-id1248915720?k=20&m=1248915720&s=612x612&w=0&h=lG9xaMq_8QRvn8b1HBOhy1WbinXM3j0jB0jEeIu2Q-Y=);
-            background-position: center;
-            background-size: cover;
+    body {
+        background-image: url(https://media.istockphoto.com/photos/farmers-hand-watering-a-young-plant-picture-id1248915720?k=20&m=1248915720&s=612x612&w=0&h=lG9xaMq_8QRvn8b1HBOhy1WbinXM3j0jB0jEeIu2Q-Y=);
+        /* background-color: #77dd77; */
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
 
-        }
+    }
 
-        .container {
-            background-color: transparent;
-            border: 2px solid black;
-            padding: 5px 20px;
-            margin: 40px -20px;
-            border-radius: 25px;
-            width: 500px;
-            position: relative;
-            left: 7%;
+    .container1 {
+        background-color: whitesmoke;
+
+        border: 2px solid black;
+        padding: 5px 20px;
+        margin: 40px -20px;
+        border-radius: 25px;
+        width: 500px;
+        position: relative;
+        left: 7%;
 
 
 
-        }
+    }
 
-        .join {
-            float: right;
-            margin-top: -50px;
+    .join {
+        float: right;
+        margin-top: -50px;
 
-            padding: 10px 15px;
-            font-size: 16px;
-            font-weight: 500;
-            color: rgb(245, 245, 248);
-            background-color: black;
-            line-height: 1.5;
-            cursor: pointer;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        color: rgb(245, 245, 248);
+        background-color: black;
+        line-height: 1.5;
+        cursor: pointer;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-decoration: none;
 
-        }
-        .join:hover{
-            color: #000000;
-            border: 2px solid;
-            background-color: teal;
-        }
-        p{
-            font-weight: bold;
-        }
-        #drive{
-          
-            margin: 50px 170px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-    </style>
-    {% endblock %}
+    }
+
+    .join:hover {
+        color: #000000;
+        border: 2px solid;
+        background-color: teal;
+    }
+
+    p {
+        font-weight: bold;
+    }
+
+    #drive {
+
+        margin: 50px 170px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+
+</body>
+
+{% endblock %}
