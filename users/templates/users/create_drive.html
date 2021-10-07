@@ -1,82 +1,96 @@
+
 {% extends "users/layout.html" %}
+{% load static %}
 
 
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title></title>
+</head>
 
-{% block content %} 
-   <body> 
-    <div class="main"> 
-    <div class="login-page">
-        <div class="form">
-            <h3>Create Tree Plantation Drive</h3>
-          <form class="login-form">
-            <input type="text" placeholder="Enter Name"/>
-            <input type="text" placeholder="Drive Name"/>
-            <input type="text" placeholder="Location"/>
-            <input type="number" placeholder="Target"/>
-            <textarea name="text" id="" cols="35" rows="5" placeholder="Description"></textarea>
-            <button>Submit</button>
-           
+<body>
+
+    <div class="container container-fluid container-1 mt-4">
+        <form>
+            <div class="form-group">
+              <div class="form-group ">
+                <input type="text" class="form-control custom-ip" id="" placeholder="Name">
+              </div>
+              <div class="form-group ">
+                <input type="text" class="form-control custom-ip" id="" placeholder="Drive Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control custom-ip" id="" placeholder="Location">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity"  class="label-text">City</label>
+                <input type="text" class="form-control custom-ip" id="">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState" class="label-text">State</label>
+                <input type="text" class="form-control custom-ip" id="">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip"  class="label-text">Zip</label>
+                <input type="text" class="form-control custom-ip" id="inputZip">
+              </div>
+            </div>
+            <div class="form-group">
+            </div>
+            <button type="submit" class="btn btn-light my-btn">Create Drive</button>
           </form>
-        </div>
-      </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 <style>
-      @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-.login-page {
-  width: 360px;
-  padding-top: 40px;
-  padding-right: 800px;
-  margin: auto;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+*{
+    overflow-x: hidden;
 }
-.form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 40px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+body{
+    background: rgb(38, 146, 28);
 }
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-.form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
-}
-
-
-
-body {
-    background-image: url(https://media.istockphoto.com/photos/farmers-hand-watering-a-young-plant-picture-id1248915720?k=20&m=1248915720&s=612x612&w=0&h=lG9xaMq_8QRvn8b1HBOhy1WbinXM3j0jB0jEeIu2Q-Y=);
-    background-position: center;
+.container-1{
+    margin-top: 5% !important;
+    padding: 60px;
+    background-image: url(https://t4.ftcdn.net/jpg/02/91/88/37/360_F_291883797_GGmcj8bGJpbTmZhErvS92ZEbGi0D512B.jpg);
     background-size: cover;
 
 }
-    </style>
+.custom-ip{
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom:2px solid white;
+}
+.custom-ip::placeholder{
+    color: white;
+}
+.label-text{
+    color: white;
+}
+.my-btn{
+    font-weight: bold;
+    color: green;
+}
+</style>
 
 {% endblock %}
