@@ -5,7 +5,7 @@
 <!-- {% if message %}
 
 {% endif %} -->
-<section class="home" id="home">
+<!-- <section class="home" id="home">
     <div style=" font-size: 30px;font-weight: bold; text-align: center;">
         “Plant a tree today; it will help us breathe tomorrow.”
     </div><br>
@@ -22,9 +22,7 @@
             <div class="slide first">
                 <img src="2.jpg">
             </div>
-            <!-- <div class="slide first">
-                <img src="3.jpg">
-            </div> -->
+            
             <div class="slide first">
                 <img src="4.jpg">
             </div>
@@ -33,14 +31,14 @@
                 <div class="auto-btn1"></div>
                 <div class="auto-btn2"></div>
                 <div class="auto-btn3"></div>
-                <!-- <div class="auto-btn4"></div> -->
+              
             </div>
         </div>
         <div class="navigation-manual">
             <label for="radio1" class="manual-btn"></label>
             <label for="radio2" class="manual-btn"></label>
             <label for="radio3" class="manual-btn"></label>
-            <!-- <label for="radio4" class="manual-btn"></label> -->
+           
         </div>
     </div>
     <script type="text/javascript">
@@ -53,22 +51,15 @@
             }
         }, 3000);
     </script>
-
-    <!-- <div style="float: right; display: flex; margin-top: -420px; font-size: 30px;font-weight: bold;">
-        “Plant a tree today;<br> it will help us breathe tomorrow.”
-    </div><br> -->
     <a href="index3.html" class="btn" style="float: right; display: flex; margin-top:-350px;margin-right: 200px;">Start
         Drive</a><br><br>
-    <!--changes -->
     <a href="index4.html" class="btn" style="float: right; display: flex; margin-top:-300px;margin-right: 200px;">Join
         Drive</a><br><br>
-    <!--changes -->
     <a href="#about" class="btn"
         style="float: right; display: flex; margin-top:-250px;margin-right: 180px;">Organization</a>
-    <!--changes -->
-</section>
+</section> -->
 
-<section class="about" id="about">
+<!-- <section class="about" id="about">
     <div class="max-width">
         <h2 class="title">Organization</h2>
         <div class="about-content">
@@ -123,8 +114,8 @@
             </div>
         </div>
     </div>
-</section>
-<style>
+</section> -->
+<!-- <style>
     * {
         padding: 0;
         margin: 0;
@@ -138,64 +129,6 @@
         font-family: sans-serif;
     }
 
-    nav {
-        background: black;
-        /* color: crimson; */
-        height: 80px;
-        width: 100%;
-        position: fixed;
-    }
-
-    label.logo {
-        color: darkcyan;
-        font-size: 35px;
-        line-height: 80px;
-        padding: 0 100px;
-        font-weight: bold;
-    }
-
-    nav ul {
-        float: right;
-        margin-right: 25px;
-    }
-
-    nav ul li {
-        display: inline-block;
-        line-height: 80px;
-        margin: 0 15px;
-    }
-
-    nav ul li a {
-        position: relative;
-        color: white;
-        font-size: 18px;
-        padding: 5px 0;
-        /* border-radius: 3px; */
-        text-transform: uppercase;
-    }
-
-    /* a.active, a:hover{
-    background: white;
-    color: black;
-    transition: .5s;
-} */
-    nav ul li a::before {
-        position: absolute;
-        content: '';
-        left: 0;
-        bottom: 0;
-        height: 3px;
-        width: 100%;
-        background: white;
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform .4s linear;
-    }
-
-    nav ul li a:hover::before {
-        transform: scaleX(1);
-        transform-origin: left;
-    }
 
     /* new */
     .home {
@@ -422,5 +355,529 @@
         border: 2px solid;
         background-color: transparent;
     }
+</style> -->
+<section class="home" id="home">
+    <div style=" font-size: 30px;font-weight: bold; text-align: center; padding-top: 3%;">
+        “Plant a tree today; it will help us breathe tomorrow.”
+    </div><br>
+    <div class="slider" style="padding-top: -2%;">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+
+            <div class="slide first">
+                <img src="3.jpg">
+            </div>
+            <div class="slide first">
+                <img src="2.jpg">
+            </div>
+            <!-- <div class="slide first">
+                <img src="3.jpg">
+            </div> -->
+            <div class="slide first">
+                <img src="4.jpg">
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <!-- <div class="auto-btn4"></div> -->
+            </div>
+        </div>
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <!-- <label for="radio4" class="manual-btn"></label> -->
+        </div>
+    </div>
+    <script type="text/javascript">
+        var counter = 1;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 3) {
+                counter = 1;
+            }
+        }, 3000);
+    </script>
+    <a href="{% url 'createDrive' %}" class="btn" id="btn1">Start Drive</a><br>
+    <a href="{% url 'joinDrive' %}" class="btn" id="btn2">Join Drive</a><br>
+    <a href="#about" class="btn" id="btn3">Organization</a>
+</section>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+   /* new */
+    .home {
+        /* padding: 100px 0; */
+        background-color: lightgrey;
+        padding-left: 20px;
+    }
+
+    .slider {
+        width: 800px;
+        height: 500px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .slides {
+        width: 500%;
+        height: 500px;
+        display: flex;
+    }
+
+    .slides input {
+        display: none;
+    }
+
+    .slide {
+        width: 39%;
+        padding-left: 5px;
+        transition: 1s;
+    }
+
+    .slide img {
+        margin-top: 60px;
+        /*changes*/
+        margin-left: 40px;
+        width: 900px;
+        /* width: 100%; */
+        height: 400px;
+        /* background-size: cover; */
+    }
+
+    .navigation-manual {
+        position: absolute;
+        width: 800px;
+        margin-top: -70px;
+        /*changes (increase negative )*/
+        display: flex;
+        justify-content: center;
+    }
+
+    .manual-btn {
+        border: 2px solid black;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .manual-btn:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .manual-btn:hover {
+        background: teal;
+    }
+
+    #radio1:checked~.first {
+        margin-left: 0;
+    }
+
+    #radio2:checked~.first {
+        margin-left: -20%;
+    }
+
+    #radio3:checked~.first {
+        margin-left: -26%;
+    }
+
+    #radio4:checked~.first {
+        margin-left: -30%;
+    }
+
+
+    .navigation-auto {
+        position: absolute;
+        display: flex;
+        width: 800px;
+        justify-content: center;
+        margin-top: 428px;
+        /*changes(decrease)*/
+
+    }
+
+    .navigation-auto div {
+        border: 2px solid black;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+    }
+
+    .navigation-auto div:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    #radio1:checked~.navigation-auto .auto-btn1 {
+        background: teal;
+    }
+
+    #radio2:checked~.navigation-auto .auto-btn2 {
+        background: teal;
+    }
+
+    #radio3:checked~.navigation-auto .auto-btn3 {
+        background: teal;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 16px;
+        font-weight: 900;
+        color: rgb(7, 7, 7);
+        background-color: teal;
+        line-height: 1.5;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-decoration: none;
+        margin-top: 20px;
+    }
+
+    .btn:hover {
+        color: #000000;
+        border: 2px solid;
+        background-color: transparent;
+    }
+    #btn1{
+        float: right; margin-top:-350px;margin-right: 200px; 
+    }
+    #btn2{
+        float: right;  margin-top:-300px;margin-right: 200px;
+    }
+    #btn3{
+        float: right; margin-top:-250px;margin-right: 180px;
+    }
+    @media screen and (max-width: 800px) {
+        .slider {
+        width: 550px;
+        height: 400px;
+    }
+
+    .slides {
+        width: 570%;
+        height: 450px;
+    }
+
+    .slide {
+        width: 39%;
+        padding-left: 6px;
+    }
+
+    .slide img {
+        width: 770px;
+        height: 400px;
+    }
+
+    .navigation-manual {
+        width: 500px;
+        margin-top: -70px;
+    }
+
+    .navigation-auto {
+        width: 500px;
+        margin-top: 380px;
+    }
+    #btn1{
+        float: none; margin-top:10%;margin-left: 10px;
+    }
+    #btn2{
+        float: none; margin-left: 72%;margin-top:-8%;
+    }
+    #btn3{
+        float: none;  margin-left: 35%; margin-top:-12%;
+    }
+}
+@media screen and (max-width: 570px) {
+        .slider {
+        width: 480px;
+    }
+
+    .slides {
+        width: 570%;
+        height: 450px;
+    }
+
+    .slide {
+        width: 39%;
+        padding-left: 6px;
+    }
+
+    .slide img {
+        width: 770px;
+        height: 400px;
+    }
+
+    .navigation-manual {
+        width: 530px;
+        margin-top: -70px;
+    }
+
+    .navigation-auto {
+        width: 530px;
+        margin-top: 380px;
+    }
+    #btn1{
+        float: none; margin-top:10%;margin-left: 10px;
+    }
+    #btn2{
+        float: none; margin-left: 10px;margin-top:10%;
+    }
+    #btn3{
+        float: none;  margin-left: 55%; margin-top:-40%;
+    }
+}
+@media screen and (max-width: 400px) {
+        .slider {
+        width: 360px;
+        height: 350px;
+        margin-left: -25px;
+    }
+
+    .slides {
+        width: 500%;
+        height: 450px;
+    }
+
+    .slide {
+        width: 39%;
+        padding-left:6px;
+    }
+
+    .slide img {
+        width: 770px;
+        height: 400px;
+    }
+
+    .navigation-manual {
+        width: 400px;
+        margin-top: -130px;
+    }
+
+    .navigation-auto {
+        width: 400px;
+        margin-top: 320px;
+    }
+    #btn1{
+        float: none; margin-top:10%;margin-left: 10px;
+    }
+    #btn2{
+        float: none; margin-left: 10px;margin-top:10%;
+    }
+    #btn3{
+        float: none;  margin-left: 55%; margin-top:-40%;
+    }
+}
 </style>
+<section class="about" id="about">
+    <div class="max-width">
+        <h2 class="title">Organization</h2>
+        <div class="about-content">
+            <div class="column left">
+                <img src="img3.jpg">
+            </div>
+            <div class="column right">
+                <div class="text">SankalpTaru Foundation <span> IT enabled E-NGO</span> </div>
+                <p>SankalpTaru is an e-NGO, which aims at promoting tree plantation across the country. The NGO is
+                    active in 21 states in India. ... The NGO involves all the aspects of environmental protection –
+                    rural development,
+                    cleaner schools, tree plantation in cities and community-based land protection.They are an
+                    IT-enabled tree plantation NGO adopting agroforestry techniques to maximise socio-environmental
+                    impact. Their objective is to reduce the carbon
+                    footprint of the global public by mobilising them towards environmental conservation.</p><br>
+                <a href="https://sankalptaru.org/">Visit E-NGO</a>
+            </div>
+        </div>
+        <div class="about-content">
+            <div class="column left">
+                <img src="img.jpg">
+            </div>
+            <div class="column right">
+                <div class="text">GREEN YANTRA Foundation <span> registered E-NGO</span> </div>
+                <p>SankalpTaru is an e-NGO, which aims at promoting tree plantation across the country. The NGO is
+                    active in 21 states in India. ... The NGO involves all the aspects of environmental protection –
+                    rural development,
+                    cleaner schools, tree plantation in cities and community-based land protection.They are an
+                    IT-enabled tree plantation NGO adopting agroforestry techniques to maximise socio-environmental
+                    impact. Their objective is to reduce the carbon
+                    footprint of the global public by mobilising them towards environmental conservation.</p><br>
+                <a href="https://www.greenyatra.org/">Visit E-NGO</a>
+            </div>
+        </div>
+        <div class="about-content">
+            <div class="column left">
+                <img src="img2.jpg">
+            </div>
+            <div class="column right">
+                <div class="text">GREEN LEAF Foundation <span> IT enabled E-NGO</span> </div>
+                <p>The notion of GREEN LEAF is using a worldwide strategy for favorable surroundings making progress on
+                    environment and social advancement too. As colorful management aids the market in reducing
+                    environmental scarcities, green foliage intends to make contribution to the green market.
+                    Green Leaf is exceptionally effective in improving of sustainable development worldwide.The motive
+                    of our organization is to think globally to cure, to care, to save, and to grow green cover. This is
+                    one of the essential aspects for effective environmental ecosystem.
+                    Green leaf organization is conducting workshops, tree plantations, making various presentations,
+                    conducting environmental awareness programs and environmental educational activities that are
+                    ABSOLUTELY FREE for schools, colleges, Housing societies, Corporate, Government
+                    and non Government institutions on a timely basis.</p><br>
+                <a href="https://greenleafngo.org/">Visit E-NGO</a>
+            </div>
+        </div>
+    </div>
+    <style>
+          /*  new */
+          #about {
+            padding: 100px 0;
+            background-color: white;
+            padding-left: 20px;
+        }
+    
+        .about .services .skills {
+            font-family: 'Poppins', sans-serif;
+        }
+    
+        .about .title {
+            position: relative;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+    
+        .about .title::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 180px;
+            height: 3px;
+            background: #000000;
+            transform: translateX(-50%);
+        }
+    
+        .about .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 50px;
+        }
+    
+        .about .about-content .left {
+            width: 45%;
+        }
+    
+        .about .about-content .left img {
+            height: 400px;
+            width: 400px;
+            /* margin: 20px; */
+            object-fit: cover;
+            margin-left: 40px;
+    
+        }
+    
+        .about .about-content .right {
+            width: 55%;
+        }
+    
+        .about .about-content .right .text {
+            font-size: 25px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    
+        .about .about-content .right .text span {
+            color: teal;
+        }
+    
+        .about .about-content .right p {
+            text-align: justify;
+        }
+    
+        .about .about-content .right a {
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgb(245, 245, 248);
+            background-color: black;
+            line-height: 1.5;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+    
+        .about .about-content .right a:hover {
+            color: #000000;
+            border: 2px solid;
+            background-color: transparent;
+        }
+        @media screen and (max-width: 600px) {
+    
+        .about .about-content .left {
+            width: 60%;
+        }
+    
+        .about .about-content .left img {
+            margin-left: 60px;
+    
+        }
+    
+        .about .about-content .right {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 500px) {
+    
+        .about .about-content .left {
+            width: 80%;
+        }
+    
+        .about .about-content .left img {
+            margin-left: 15px;
+    
+        }
+    
+        .about .about-content .right {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 400px) {
+    
+        .about .about-content .left {
+            width: 80%;
+        }
+    
+        .about .about-content .left img {
+            margin-left: -20px;
+    
+        }
+    
+        .about .about-content .right {
+            width: 100%;
+        }
+    }
+    </style>
+</section> 
 {% endblock %}
