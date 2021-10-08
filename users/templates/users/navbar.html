@@ -40,36 +40,39 @@
         <div class="collapse navbar-collapse" id="navbarNav" >
           <ul class="navbar-nav ml-auto" >
             <li class="nav-item ">
-              <a class="nav-link" href="#" style="color: white;margin-right:10px;">Home </a>
+              <a class="nav-link" href="{% url 'home' %}" style="color: white;margin-right:10px;">Home </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" style="color: white;margin-right:10px;">Drive</a>
+                <a class="nav-link" href="{% url 'joinDrive' %}" style="color: white;margin-right:10px;">Drives</a>
               </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;margin-right:10px;">Signup</a>
+              {% if not user.is_authenticated %}
+            <li> 
+                <a class="nav-link"  style="color: white;margin-right:10px;" onclick="document.getElementById('id01').style.display='block'">login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white;margin-right:10px;">Profile</a>
+              <a class="nav-link" href="{% url 'register' %}" style="color: white;margin-right:10px;">Signup</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile' %}" style="color: white;margin-right:10px;">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" style="color: white;margin-right:10px;">Logout</a>
+                <a class="nav-link" href="{% url 'logout' %}" style="color: white;margin-right:10px;">Logout</a>
               </li>
+              {% endif %}
             <li class="nav-item">
-                <a class="nav-link" href="#" style="color: white;margin-right:10px;">Our team</a>
+                <a class="nav-link" href="{% url 'ourTeam' %}" style="color: white;margin-right:10px;">Our team</a>
               </li>
-             <li> 
-                <a class="nav-link" href="#" style="color: white;margin-right:10px;" onclick="document.getElementById('id01').style.display='block'">login</a>
-            </li>
           </ul>
         </div>
       </nav>
+
+  
 {% if message %}
 <script>
     alert("{{message}}")
 </script>
 {% endif %}
-
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
