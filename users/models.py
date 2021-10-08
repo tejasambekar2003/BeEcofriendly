@@ -10,7 +10,7 @@ import datetime
 
 class Drive(models.Model):
     host = models.ForeignKey(User, related_name="hostedBy", on_delete=PROTECT, null=True)
-    members = models.ManyToManyField(User, related_name="mebers")
+    members = models.ManyToManyField(User, related_name="mebers", null = True)
     drive_name = models.CharField(max_length=64)
     location = models.CharField(max_length=64)
     target = models.IntegerField()

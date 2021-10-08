@@ -93,9 +93,10 @@ def createDrive(request):
 
             current_user = request.user
 
-            d1 = Drive( drive_name = drive, location = location, target = target, desc = desc)
+            d1 = Drive(host =current_user, drive_name = drive, location = location, target = target, desc = desc)
             d1.save()
-            d1.host.add(current_user)
+            d1.members.add(current_user)
+
             return render (request, "users/create_drive.html", {"message":"Drive created successfully"})
         return render(request, "users/create_drive.html")
 
