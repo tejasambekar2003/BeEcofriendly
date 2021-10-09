@@ -21,6 +21,7 @@ class Drive(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=CASCADE)
     location = models.CharField(max_length=60)
+    indi_tree_count = models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.user.first_name}"
