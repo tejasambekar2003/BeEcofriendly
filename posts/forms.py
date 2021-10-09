@@ -9,7 +9,7 @@ from .models import Post1
 
 class CreatePostForm(forms.ModelForm):
     class Meta:
-        fields = ('photo', 'caption', )
+        fields = ('photo', 'caption' )
         model = Post1
 
     def __init__(self, *args, **kwargs):

@@ -25,25 +25,9 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.user.first_name}"
 
-class Tree(models.Model):
-    drive = models.OneToOneField(Drive, on_delete=CASCADE)
-    tree_count = models.IntegerField()
-    def __str__(self):
-        return f"{self.drive.drive_name} : {self.tree_count}"
 
 
 
 
-<<<<<<< HEAD
-class Post(models.Model):
-    author = models.ForeignKey(User,null=True,  on_delete=CASCADE)
-    drive = models.ForeignKey(Drive,null=True, on_delete=CASCADE)
-    caption = models.CharField(default='', max_length=100, null=True)
-    # date_posted = models.DateTimeField(default=datetime.datetime.now())
-    image = models.ImageField(upload_to='images')
 
-    def _str_(self):
-        return str(self.pk)
-=======
->>>>>>> 2db693995d60cdcf696694f479bf3f5a855d2bd8
 

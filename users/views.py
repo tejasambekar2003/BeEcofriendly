@@ -1,13 +1,11 @@
-<<<<<<< HEAD
-from users.models import Drive, Post, Profile, Tree
-=======
-from users.models import Drive
->>>>>>> 2db693995d60cdcf696694f479bf3f5a855d2bd8
+from users.models import Drive,  Profile
+from posts.models import Post1
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.urls import reverse
 from django.contrib.auth import authenticate, login as login_User, logout as logout_User
+
 # from .forms import ImageForm
 
 
@@ -73,7 +71,7 @@ def register(request):
             p1 = Profile(user = u1, location = location)
             p1.save()
             print("User created successfully")
-            return render (request, 'users/register.html', {'success_message': "Registration Succsessful!"})
+            return render (request, 'users/home.html', {'message': "Registration Succsessful! Please Login"})
         else:
             return render(request, 'users/register.html', {'err_lst': err_lst})
 
@@ -93,7 +91,7 @@ def profile(request):
 
 def createDrive(request):
     if not request.user.is_authenticated:
-        return redirect(reverse("login"))
+        return render(request, "users/home.html", {"message":"Please Login!"})
     else:
         if request.method == "POST":
             drive = request.POST['drive']
@@ -106,15 +104,16 @@ def createDrive(request):
             d1 = Drive(host =current_user, drive_name = drive, location = location, target = target, desc = desc)
             d1.save()
             d1.members.add(current_user)
-            t1 = Tree(drive=d1, tree_count = 0)
-            t1.save()
 
             return render (request, "users/create_drive.html", {"message":"Drive created successfully"})
         return render(request, "users/create_drive.html")
 
 def joinDrive(request):
-    context ={'drives' : Drive.objects.all()}
-    return render(request, "users/join_drive.html", context)
+    if not request.user.is_authenticated:
+        return render(request, "users/home.html", {"message":"Please Login!"})
+    else:
+        context ={'drives' : Drive.objects.all()}
+        return render(request, "users/join_drive.html", context)
 
 def ourTeam(request):
     return render(request, "users/our_team.html")
@@ -165,8 +164,23 @@ def indi_drive_join(request, drive_pk):
 
 def drive_home(request, drive_pk):
     drive = Drive.objects.get(pk = drive_pk)
-    drive.count += 5
-    drive.save()
-    context = {'drive' : drive, 'treeCount' : drive.count}
+    message = ''
+    if request.method == 'POST':
+        hid = request.POST['hiddenValue']
+        if hid == "post":
+            print(hid)
+            caption = request.POST['caption']
+            image = request.FILES['imagepost']
+            author = request.user
+
+            post = Post1(drive = drive, author =author, photo = image, caption = caption)
+            post.save()
+            message = "Posted Succesfully"
+        else:
+            inc = int(request.POST['inc'])
+            drive.count += inc
+            drive.save()
+            message = f"{inc} trees planted succesfully."
+    context = {'drive' : drive, 'treeCount' : drive.count, 'message' : message}
 
     return render(request, 'users/drive_home.html', context)

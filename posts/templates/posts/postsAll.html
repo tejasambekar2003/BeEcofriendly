@@ -1,7 +1,8 @@
 {% extends "users/layout.html" %}
 {% block content %}
 
-    <div class="container">
+    <div class="container" style="text-align: center;">
+    <span class="top-text">{{drive.drive_name}}</span>
         <div class="grid grid-custom">
             <div class="row">
                 {% if user.is_authenticated %}
@@ -23,6 +24,14 @@
         background-size: cover;
         background-attachment: fixed;
     }
+    .top-text {
+    padding-top: 20px;
+    font-size: 4rem;
+    color: aliceblue;
+    padding-bottom: 50px;
+    margin-right: 10px auto;
+
+  }
 
 </style>
 {% endblock %}
