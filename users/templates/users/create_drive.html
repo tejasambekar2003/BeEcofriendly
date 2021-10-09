@@ -1,0 +1,73 @@
+{% extends "users/layout.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+    <div class="container container-fluid container-1 mt-4">
+        <form action="{% url 'createDrive' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <div class="form-group ">
+                <input type="text" class="form-control custom-ip" name="drive" placeholder="Drive Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control custom-ip" name="location" placeholder="Location">
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control custom-ip" name="target" placeholder="Target">
+            </div>
+            <div class="form-group">
+              <input class="form-control custom-ip"  type="text-area" name="desc"  placeholder="Description" type="textarea">
+            </div>
+            <div class="form-group">
+            </div>
+            <button type="submit" class="btn btn-light my-btn">Create Drive</button>
+          </form>
+    </div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+*{
+  overflow-x: hidden !important;
+}
+body{
+    background: rgb(38, 146, 28);
+}
+.container-1{
+    width: 60%;
+    margin-top: 10% !important;
+    padding: 60px;
+    background-image: url(https://t4.ftcdn.net/jpg/02/91/88/37/360_F_291883797_GGmcj8bGJpbTmZhErvS92ZEbGi0D512B.jpg),
+                      linear-gradient(gray, black);
+    background-size: 100% 100%;
+    
+}
+
+@media (max-width:400px) {
+   .container-1{
+       background-size: cover;
+       width: 90%;
+   } 
+}
+.custom-ip{
+    color: white !important;
+    border: none;
+    border-bottom:2px solid white;
+    background: transparent !important  ;
+}
+.custom-ip::placeholder{
+    color: white !important;
+}
+.label-text{
+    color: white;
+}
+.my-btn{
+    font-weight: bold;
+    color: green;
+}
+</style>
+
+{% endblock %}

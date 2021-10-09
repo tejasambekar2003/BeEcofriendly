@@ -2,8 +2,9 @@
 
 {% block content %} 
 
+
 <style>
-    
+    /* /set border to the form/ */
     h2{
         text-align: center;
     } 
@@ -13,7 +14,7 @@
         width: 50%;
         margin-left: 25%;
     }
-    
+    /* /assign full width inputs/ */
       
     input[type=email],
     input[type=password],input[type=text] {
@@ -35,11 +36,13 @@
         cursor: pointer;
         width: 100%;
     }
+    /* set a hover effect for the button*/
     
       
     button:hover {
         opacity: 0.8;
     }
+    /* /set extra style for the cancel button/ */
     
       
     .cancelbtn {
@@ -52,12 +55,14 @@
     .container {
         padding: 16px;
     }
+    /* /set the forgot password text/ */
     
       
     span.psw {
         float: right;
         padding-top: 16px;
     }
+    /* /set styles for span and cancel button on small screens/ */
     
       
     @media screen and (max-width: 300px) {
@@ -71,36 +76,37 @@
     }
 </style>
   
+
 <body>
-  
     <h2 style="font-size: 2.5rem;" >SignUp</h2>
     <!--Step 1 : Adding HTML-->
-    <form action="/action_page.php ">
-  
+    <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
         <div class="container">
             <label for="name"><b>Name</b></label>
-            <input type="text" placeholder="Enter Name" name="Name" required>
+            <input type="text" placeholder="Enter Name" name="name" required>
       
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" required>
       
-            <label for="Location"><b>Location</b></label>
-            <input type="text" placeholder="Enter Location" name="Location" required>
+            <label for="location"><b>Location</b></label>
+            <input type="text" placeholder="Enter Location" name="location" required>
       
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <label for="password1"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password1" required>
       
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <label for="password2"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="password2" required>
   
             <button type="submit">Signup</button>
             <input type="checkbox" checked="checked"> Remember me
         </div>
   
         <div class="container" style="background-color:#f1f1f1">
-            <a>Already Signup?</a>
-            <span class="cancelbtn"> <a href="#" style="text-decoration: none;color: black;">Signin</a></span>
+            <a>Already a User?</a>
+            <span class="cancelbtn"> <a  style="text-decoration: none;color: black;"  onclick="document.getElementById('id01').style.display='block'">Signin</a></span>
         </div>
     </form>
+
 
 {% endblock %}

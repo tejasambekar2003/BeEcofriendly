@@ -21,7 +21,7 @@
             <div class="projects">
                 <div class="projects_data">
                     <div class="data">
-                        <h4>Instagram ID</h4>
+                        <h4>Username</h4>
                         <p>{{user.username}}</p>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="projects_data">
                     <div class="data">
                         <h4>Trees planted</h4>
-                        <p>5</p>
+                        <p>{{profile.indi_tree_count}}</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 <div class="projects_data">
                     <div class="data">
                         <h4>Location</h4>
-                        <p>Amravati</p>
+                        <p>{{profile.location}}</p>
                     </div>
                 </div>
             </div>
@@ -55,13 +55,15 @@
               </tr>
           </thead>
           <tbody>
+          {% for drive in userDrives %}
               <tr>
-                  <td>1</td>
-                  <td><a href="#">NSS drive</a></td>
-                  <td>15</td>
-                  <td>Completed</td>
+                  <td>{{ forloop.counter }}</td>
+                  <td><a href="{% url 'driveHome' drive.pk %}">{{drive.drive_name}}</a></td>
+                  <td>{{drive.count}}</td>
+                  <td>{{drive.target}}</td>
               </tr>
-              <tr>
+          {% endfor %}
+              <!-- <tr>
                   <td>2</td>
                   <td><a href="#">RSS drive</a></td>
                   <td>50</td>
@@ -72,7 +74,7 @@
                   <td><a href="#">PICT drive</a></td>
                   <td>5</td>
                   <td>Incomplete</td>
-              </tr>
+              </tr> -->
           </tbody>
       </table>
       </div>
@@ -205,6 +207,39 @@ td {
   padding-top: 700px;
   padding-left: 430px;
   padding-bottom: 100px;
+}
+@media screen and (max-width: 600px) {
+        .wrapper {
+      position: absolute;
+      top: 60%;
+      left: 55%;
+      width: 100%;
+    }
+    .tab {
+      width: 100%;
+      margin-right: 100px;
+    }
+    .main {
+      padding-top: 600px;
+      padding-left: 50px;
+      padding-bottom: 100px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .wrapper {
+      top: 60%;
+      left: 65%;
+      width: 100%;
+    }
+    .tab {
+      width: 80%;
+      margin-right: 250px;
+    }
+    .main {
+      padding-top: 600px;
+      padding-left: 5px;
+      padding-bottom: 100px;
+    }
 }
 </style>
     </style>

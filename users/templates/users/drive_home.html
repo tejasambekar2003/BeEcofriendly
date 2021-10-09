@@ -1,0 +1,172 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'users/target.html' %}
+{% include 'users/post_pop.html' %}
+<div class="">
+  <div class="card">
+    <img class="image-custom" src="{% static 'R.jpg' %}" />
+    <div class="card-img-overlay">
+      
+      
+      <span class="top-text">{{drive.drive_name}}</span>
+      <span>
+        
+        <button type="button" class="btn btn-success my-btn" data-toggle="modal" data-target="#myModal">
+            Plant Trees
+          </button>
+      
+    </span>
+    <span>
+        
+        <button type="button" class="btn btn-success my-btn" data-toggle="modal" data-target="#myModalPost">
+            Post a Snap
+          </button>
+      
+    </span>
+    <span>
+        
+        <a href="{{drive.pk}}/allposts" class="btn btn-success my-btn " role="button" aria-pressed="true">Glimpses</a>
+      
+    </span>
+    
+
+      
+      <div class="description-text">{{drive.desc}}</div>
+      <div class="grid " style="padding-bottom: 20px;">
+        <div class="row">
+          <div class="col-4">
+            <div class="upper-text">
+              <font color="green">{{drive.location}}</font>
+            </div>
+            <div class="lower-text">Location</div>
+          </div>
+          <div class="col-4">
+            <div class="upper-text">
+              <font color="green">{{drive.target}}</font>
+            </div>
+            <div class="lower-text">Target</div>
+          </div>
+          <div class="col-4">
+            <div class="upper-text">
+              <font color="green">{{drive.count}}</font>
+            </div>
+            <div class="lower-text">Planted</div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="grid">
+        <div class="row">
+          <div class="col-3">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static 'y.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">My First drive</h5>
+                <p class="card-text">It gives a sense of accomplishment to have participated and helped for a social
+                  cause</p>
+                <div style="text-align: center;"><a href="#" class="btn btn-success"
+                    style="text-align: center;">Like</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static 'x.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">A new experience</h5>
+                <p class="card-text">Enjoyed a new venture of plantation drives, encourage all to participate</p>
+                <div style="text-align: center;"><a href="#" class="btn btn-success"
+                    style="text-align: center;">Like</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static 'R.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Plantation Drive</h5>
+                <p class="card-text">Really liked the initaitive and encourage all to take part atleast once in their
+                  drives.</p>
+                <div style="text-align: center;"><a href="#" class="btn btn-success"
+                    style="text-align: center;">Like</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static 'z.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">PICT Drive</h5>
+                <p class="card-text">Being a student I always tries to work for the welfare of society and work for a
+                  social cause.</p>
+                <div style="text-align: center;"><a href="#" class="btn btn-success"
+                    style="text-align: center;">Like</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<style>
+  .upper-text {
+    font-size: 3rem;
+  }
+
+  .drive-name a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .drive-name a:hover {
+    text-decoration: none;
+    color: rgb(124, 122, 122);
+  }
+
+  .lower-text {
+    font-size: 2rem;
+    color: aliceblue;
+  }
+
+  .image-custom {
+    filter: brightness(30%);
+    height: 800px;
+  }
+
+  .top-text {
+    padding-top: 20px;
+    font-size: 4rem;
+    color: aliceblue;
+    padding-bottom: 50px;
+    margin-right: 50px;
+
+  }
+
+  .description-text {
+    color: aliceblue;
+    font-size: 2rem;
+    padding-bottom: 50px;
+  }
+
+  .my-btn {
+    margin-bottom: 50px;
+    margin-top: 0px;
+    margin-right: 10px;
+    font-size: 2rem;
+    width: 12rem;
+  }
+</style>
+</body>
+
+</html>
+{% endblock content %}

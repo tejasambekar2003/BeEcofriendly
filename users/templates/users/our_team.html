@@ -1,5 +1,133 @@
 {% extends 'users/layout.html' %}
-
+{% load static %}
     {% block content %} 
-    <h1> This our team </h1>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="structure.css">
+
+<div class="wrapper">
+    <h1>Meet Our Team</h1>
+    <div class="our_team">
+        <div class="team_member">
+          <div class="member_img">
+             <img src="{% static 'team/dev.jpg' %}" alt="our_team">
+          </div>
+          <h3>Devraj Shetake</h3>
+          <span><h4>Backend Developer</h4></span>
+          <p>Email Id: devrajshetake@gmail.com</p>
+        </div>
+        <div class="team_member">
+           <div class="member_img">
+             <img src="{% static 'team/NikitaK.jpg' %}" alt="our_team">
+          </div>
+          <h3>Nikita Karande</h3>
+          <span><h4>Frontend Developer</h4></span>
+          <p>Email Id: nikitakarande27@gmail.com</p>
+      </div>
+        <div class="team_member">
+           <div class="member_img">
+             <img src="{% static 'team/kaushal.jpg' %}" alt="our_team">
+          </div>
+          <h3>Kaushal Kulkarni</h3>
+          <span><h4>Backend Developer</h4></span>
+          <p>Email Id: kaushal110602@gmail.com</p>
+      </div>
+        <div class="team_member">
+           <div class="member_img">
+             <img src="{% static 'team/tejas.jpeg' %}" alt="our_team">
+          </div>
+          <h3>Tejas Ambekar</h3>
+          <span><h4>Frontend Developer</h4></span>
+          <p>Email Id: tejasambekar2003@gmail.com</p>
+      </div>  
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Exo+2|Yatra+One');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+
+body{
+  background: #3cb371;
+}
+
+.wrapper{
+  margin-top: 60px;
+  text-align: center;
+}
+
+.wrapper h1{
+  font-family: 'Yatra One', cursive;
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.our_team{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.our_team .team_member{
+  width: 280px;
+  height: 350px;
+  margin: 5px;
+  background: #fff;
+  padding: 20px 10px;
+}
+
+.our_team .team_member .member_img{
+  background: #e9e5fa;  
+  max-width: 190px;
+  width: 100%;
+  height: 190px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.our_team .team_member .member_img img{
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.our_team .team_member h3{
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  margin: 15px 0 0px;
+}
+
+.our_team .team_member span{
+  font-size: 15px;
+  line-height: 45px;
+}
+
+.our_team .team_member p{
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: start;
+}
+
+
+.our_team .team_member .member_img .social_media .item{
+  margin: 0 10px;
+}
+
+.our_team .team_member .member_img .social_media .fab{
+  color: #3cb371;
+  font-size: 20px;
+}
+</style>
     {% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: rgb(11, 146, 101);">
+      
+        <div class="modal-header">
+          <h4 class="modal-title" >Trees Planted</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <form action="{% url 'driveHome' drive.pk %}" method="post">
+            {% csrf_token %}
+        <div class="modal-body">
+            <input type="number" placeholder="Number of trees planted"  name="inc" required><br><br>
+            <input type="text" placeholder="Name of trees"  name="trees" required>
+            <input type="hidden" value="updateCount" name="hiddenValue">
+
+        </div>
+    
+
+        <!-- <div class="modal-body">
+            <input type="text" placeholder="Name of tress"  name="uname" required>
+        </div>
+         -->
+        <button type="submit" style="width: 24%;height: 20%; margin-left: 40%; background-color:rgb(117, 223, 117);">Plant tress</button>
+    </form>
+        
+      </div>
+    </div>
+  </div>
+  

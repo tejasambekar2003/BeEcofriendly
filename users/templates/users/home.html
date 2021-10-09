@@ -1,361 +1,9 @@
 {% extends "users/layout.html" %}
+{% load static %}
 
 
 {% block content %}
-<!-- {% if message %}
 
-{% endif %} -->
-<!-- <section class="home" id="home">
-    <div style=" font-size: 30px;font-weight: bold; text-align: center;">
-        “Plant a tree today; it will help us breathe tomorrow.”
-    </div><br>
-    <div class="slider">
-        <div class="slides">
-            <input type="radio" name="radio-btn" id="radio1">
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-            <input type="radio" name="radio-btn" id="radio4">
-
-            <div class="slide first">
-                <img src="3.jpg">
-            </div>
-            <div class="slide first">
-                <img src="2.jpg">
-            </div>
-            
-            <div class="slide first">
-                <img src="4.jpg">
-            </div>
-
-            <div class="navigation-auto">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-              
-            </div>
-        </div>
-        <div class="navigation-manual">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-           
-        </div>
-    </div>
-    <script type="text/javascript">
-        var counter = 1;
-        setInterval(function () {
-            document.getElementById('radio' + counter).checked = true;
-            counter++;
-            if (counter > 3) {
-                counter = 1;
-            }
-        }, 3000);
-    </script>
-    <a href="index3.html" class="btn" style="float: right; display: flex; margin-top:-350px;margin-right: 200px;">Start
-        Drive</a><br><br>
-    <a href="index4.html" class="btn" style="float: right; display: flex; margin-top:-300px;margin-right: 200px;">Join
-        Drive</a><br><br>
-    <a href="#about" class="btn"
-        style="float: right; display: flex; margin-top:-250px;margin-right: 180px;">Organization</a>
-</section> -->
-
-<!-- <section class="about" id="about">
-    <div class="max-width">
-        <h2 class="title">Organization</h2>
-        <div class="about-content">
-            <div class="column left">
-                <img src="img3.jpg">
-            </div>
-            <div class="column right">
-                <div class="text">SankalpTaru Foundation <span> IT enabled E-NGO</span> </div>
-                <p>SankalpTaru is an e-NGO, which aims at promoting tree plantation across the country. The NGO is
-                    active in 21 states in India. ... The NGO involves all the aspects of environmental protection –
-                    rural development,
-                    cleaner schools, tree plantation in cities and community-based land protection.They are an
-                    IT-enabled tree plantation NGO adopting agroforestry techniques to maximise socio-environmental
-                    impact. Their objective is to reduce the carbon
-                    footprint of the global public by mobilising them towards environmental conservation.</p><br>
-                <a href="https://sankalptaru.org/">Visit E-NGO</a>
-            </div>
-        </div>
-        <div class="about-content">
-            <div class="column left">
-                <img src="img.jpg">
-            </div>
-            <div class="column right">
-                <div class="text">GREEN YANTRA Foundation <span> registered E-NGO</span> </div>
-                <p>SankalpTaru is an e-NGO, which aims at promoting tree plantation across the country. The NGO is
-                    active in 21 states in India. ... The NGO involves all the aspects of environmental protection –
-                    rural development,
-                    cleaner schools, tree plantation in cities and community-based land protection.They are an
-                    IT-enabled tree plantation NGO adopting agroforestry techniques to maximise socio-environmental
-                    impact. Their objective is to reduce the carbon
-                    footprint of the global public by mobilising them towards environmental conservation.</p><br>
-                <a href="https://www.greenyatra.org/">Visit E-NGO</a>
-            </div>
-        </div>
-        <div class="about-content">
-            <div class="column left">
-                <img src="img2.jpg">
-            </div>
-            <div class="column right">
-                <div class="text">GREEN LEAF Foundation <span> IT enabled E-NGO</span> </div>
-                <p>The notion of GREEN LEAF is using a worldwide strategy for favorable surroundings making progress on
-                    environment and social advancement too. As colorful management aids the market in reducing
-                    environmental scarcities, green foliage intends to make contribution to the green market.
-                    Green Leaf is exceptionally effective in improving of sustainable development worldwide.The motive
-                    of our organization is to think globally to cure, to care, to save, and to grow green cover. This is
-                    one of the essential aspects for effective environmental ecosystem.
-                    Green leaf organization is conducting workshops, tree plantations, making various presentations,
-                    conducting environmental awareness programs and environmental educational activities that are
-                    ABSOLUTELY FREE for schools, colleges, Housing societies, Corporate, Government
-                    and non Government institutions on a timely basis.</p><br>
-                <a href="https://greenleafngo.org/">Visit E-NGO</a>
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- <style>
-    * {
-        padding: 0;
-        margin: 0;
-        text-decoration: none;
-        list-style: none;
-        box-sizing: border-box;
-
-    }
-
-    body {
-        font-family: sans-serif;
-    }
-
-
-    /* new */
-    .home {
-        padding: 100px 0;
-        background-color: lightgrey;
-        padding-left: 20px;
-    }
-
-    .slider {
-        width: 800px;
-        height: 500px;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .slides {
-        width: 500%;
-        height: 500px;
-        display: flex;
-    }
-
-    .slides input {
-        display: none;
-    }
-
-    .slide {
-        width: 39%;
-        padding-left: 5px;
-        transition: 1s;
-    }
-
-    .slide img {
-        margin-top: 60px;
-        /*changes*/
-        margin-left: 40px;
-        width: 900px;
-        /* width: 100%; */
-        height: 400px;
-    }
-
-    .navigation-manual {
-        position: absolute;
-        width: 800px;
-        margin-top: -70px;
-        /*changes (increase negative )*/
-        display: flex;
-        justify-content: center;
-    }
-
-    .manual-btn {
-        border: 2px solid black;
-        padding: 5px;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 1s;
-    }
-
-    .manual-btn:not(:last-child) {
-        margin-right: 40px;
-    }
-
-    .manual-btn:hover {
-        background: teal;
-    }
-
-    #radio1:checked~.first {
-        margin-left: 0;
-    }
-
-    #radio2:checked~.first {
-        margin-left: -20%;
-    }
-
-    #radio3:checked~.first {
-        margin-left: -26%;
-    }
-
-    #radio4:checked~.first {
-        margin-left: -30%;
-    }
-
-
-    .navigation-auto {
-        position: absolute;
-        display: flex;
-        width: 800px;
-        justify-content: center;
-        margin-top: 428px;
-        /*changes(decrease)*/
-
-    }
-
-    .navigation-auto div {
-        border: 2px solid black;
-        padding: 5px;
-        border-radius: 10px;
-        transition: 1s;
-    }
-
-    .navigation-auto div:not(:last-child) {
-        margin-right: 40px;
-    }
-
-    #radio1:checked~.navigation-auto .auto-btn1 {
-        background: teal;
-    }
-
-    #radio2:checked~.navigation-auto .auto-btn2 {
-        background: teal;
-    }
-
-    #radio3:checked~.navigation-auto .auto-btn3 {
-        background: teal;
-    }
-
-    .btn {
-        padding: 10px 25px;
-        font-size: 16px;
-        font-weight: 900;
-        color: rgb(7, 7, 7);
-        background-color: teal;
-        line-height: 1.5;
-        cursor: pointer;
-        border-radius: 30px;
-        transition: all 0.3s ease;
-        display: inline-block;
-        text-decoration: none;
-        margin-top: 20px;
-    }
-
-    .btn:hover {
-        color: #000000;
-        border: 2px solid;
-        background-color: transparent;
-    }
-
-    /*  new */
-    #about {
-        padding: 100px 0;
-        background-color: white;
-        padding-left: 20px;
-    }
-
-    .about .services .skills {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .about .title {
-        position: relative;
-        text-align: center;
-        font-size: 40px;
-        font-weight: 500;
-        margin-bottom: 60px;
-        padding-bottom: 20px;
-        font-family: 'Ubuntu', sans-serif;
-    }
-
-    .about .title::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 180px;
-        height: 3px;
-        background: #000000;
-        transform: translateX(-50%);
-    }
-
-    .about .about-content {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        margin-right: 50px;
-    }
-
-    .about .about-content .left {
-        width: 45%;
-    }
-
-    .about .about-content .left img {
-        height: 400px;
-        width: 400px;
-        /* margin: 20px; */
-        object-fit: cover;
-        margin-left: 40px;
-
-    }
-
-    .about .about-content .right {
-        width: 55%;
-    }
-
-    .about .about-content .right .text {
-        font-size: 25px;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .about .about-content .right .text span {
-        color: teal;
-    }
-
-    .about .about-content .right p {
-        text-align: justify;
-    }
-
-    .about .about-content .right a {
-        padding: 10px 15px;
-        font-size: 16px;
-        font-weight: 500;
-        color: rgb(245, 245, 248);
-        background-color: black;
-        line-height: 1.5;
-        cursor: pointer;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        display: inline-block;
-        text-decoration: none;
-    }
-
-    .about .about-content .right a:hover {
-        color: #000000;
-        border: 2px solid;
-        background-color: transparent;
-    }
-</style> -->
 <section class="home" id="home">
     <div style=" font-size: 30px;font-weight: bold; text-align: center; padding-top: 3%;">
         “Plant a tree today; it will help us breathe tomorrow.”
@@ -368,16 +16,16 @@
             <input type="radio" name="radio-btn" id="radio4">
 
             <div class="slide first">
-                <img src="3.jpg">
+                <img src="{% static 'home/slider/3.jpg' %}">
             </div>
             <div class="slide first">
-                <img src="2.jpg">
+                <img src="{% static 'home/slider/2.jpg' %}">
             </div>
             <!-- <div class="slide first">
                 <img src="3.jpg">
             </div> -->
             <div class="slide first">
-                <img src="4.jpg">
+                <img src="{% static 'home/slider/4.jpg' %}">
             </div>
 
             <div class="navigation-auto">
@@ -692,7 +340,7 @@
         <h2 class="title">Organization</h2>
         <div class="about-content">
             <div class="column left">
-                <img src="img3.jpg">
+                <img src="{% static 'home/organ/img3.jpg' %}">
             </div>
             <div class="column right">
                 <div class="text">SankalpTaru Foundation <span> IT enabled E-NGO</span> </div>
@@ -708,7 +356,7 @@
         </div>
         <div class="about-content">
             <div class="column left">
-                <img src="img.jpg">
+                <img src="{% static 'home/organ/img.jpg' %}">
             </div>
             <div class="column right">
                 <div class="text">GREEN YANTRA Foundation <span> registered E-NGO</span> </div>
@@ -724,7 +372,7 @@
         </div>
         <div class="about-content">
             <div class="column left">
-                <img src="img2.jpg">
+                <img src="{% static 'home/organ/img2.jpg' %}">
             </div>
             <div class="column right">
                 <div class="text">GREEN LEAF Foundation <span> IT enabled E-NGO</span> </div>

@@ -5,4 +5,4 @@ from .models import *
 
 admin.site.register(Drive)
 # admin.site.register(Planter)
-# admin.site.register(Post)
+admin.site.register(Profile)
