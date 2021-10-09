@@ -2,14 +2,9 @@
 
 {% block content %} 
 
-<<<<<<< HEAD
 
 <style>
-    /set border to the form/
-=======
-<style>
-    
->>>>>>> f3c27d27dae12cfe699eaad8c52a3b0f6cc6e64e
+    /* /set border to the form/ */
     h2{
         text-align: center;
     } 
@@ -19,11 +14,7 @@
         width: 50%;
         margin-left: 25%;
     }
-<<<<<<< HEAD
-    /assign full width inputs/
-=======
-    
->>>>>>> f3c27d27dae12cfe699eaad8c52a3b0f6cc6e64e
+    /* /assign full width inputs/ */
       
     input[type=email],
     input[type=password],input[type=text] {
@@ -34,11 +25,7 @@
         border: 2px solid #ccc;
         box-sizing: border-box;
     }
-<<<<<<< HEAD
-    /set a style for the buttons/
-=======
     
->>>>>>> f3c27d27dae12cfe699eaad8c52a3b0f6cc6e64e
       
     button {
         background-color: #4CAF50;
@@ -49,20 +36,14 @@
         cursor: pointer;
         width: 100%;
     }
-<<<<<<< HEAD
     /* set a hover effect for the button*/
-=======
     
->>>>>>> f3c27d27dae12cfe699eaad8c52a3b0f6cc6e64e
       
     button:hover {
         opacity: 0.8;
     }
-<<<<<<< HEAD
-    /set extra style for the cancel button/
-=======
+    /* /set extra style for the cancel button/ */
     
->>>>>>> f3c27d27dae12cfe699eaad8c52a3b0f6cc6e64e
       
     .cancelbtn {
         width: auto;
@@ -74,21 +55,15 @@
     .container {
         padding: 16px;
     }
-<<<<<<< HEAD
-    /set the forgot password text/
-=======
+    /* /set the forgot password text/ */
     
->>>>>>> f3c27d27dae12cfe699eaad8c52a3b0f6cc6e64e
       
     span.psw {
         float: right;
         padding-top: 16px;
     }
-<<<<<<< HEAD
-    /set styles for span and cancel button on small screens/
-=======
+    /* /set styles for span and cancel button on small screens/ */
     
->>>>>>> f3c27d27dae12cfe699eaad8c52a3b0f6cc6e64e
       
     @media screen and (max-width: 300px) {
         span.psw {
@@ -101,44 +76,37 @@
     }
 </style>
   
-<<<<<<< HEAD
 
-=======
 <body>
->>>>>>> f3c27d27dae12cfe699eaad8c52a3b0f6cc6e64e
-  
     <h2 style="font-size: 2.5rem;" >SignUp</h2>
     <!--Step 1 : Adding HTML-->
-    <form action="/action_page.php ">
-  
+    <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
         <div class="container">
             <label for="name"><b>Name</b></label>
-            <input type="text" placeholder="Enter Name" name="Name" required>
+            <input type="text" placeholder="Enter Name" name="name" required>
       
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" required>
       
-            <label for="Location"><b>Location</b></label>
-            <input type="text" placeholder="Enter Location" name="Location" required>
+            <label for="location"><b>Location</b></label>
+            <input type="text" placeholder="Enter Location" name="location" required>
       
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <label for="password1"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password1" required>
       
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <label for="password2"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="password2" required>
   
             <button type="submit">Signup</button>
             <input type="checkbox" checked="checked"> Remember me
         </div>
   
         <div class="container" style="background-color:#f1f1f1">
-            <a>Already Signup?</a>
-            <span class="cancelbtn"> <a href="#" style="text-decoration: none;color: black;">Signin</a></span>
+            <a>Already a User?</a>
+            <span class="cancelbtn"> <a  style="text-decoration: none;color: black;"  onclick="document.getElementById('id01').style.display='block'">Signin</a></span>
         </div>
     </form>
-<<<<<<< HEAD
 
-=======
->>>>>>> f3c27d27dae12cfe699eaad8c52a3b0f6cc6e64e
 
 {% endblock %}

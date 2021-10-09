@@ -21,7 +21,7 @@
             <div class="projects">
                 <div class="projects_data">
                     <div class="data">
-                        <h4>Instagram ID</h4>
+                        <h4>Username</h4>
                         <p>{{user.username}}</p>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="projects_data">
                     <div class="data">
                         <h4>Location</h4>
-                        <p>Amravati</p>
+                        <p>{{profile.location}}</p>
                     </div>
                 </div>
             </div>
@@ -55,13 +55,15 @@
               </tr>
           </thead>
           <tbody>
+          {% for drive in userDrives %}
               <tr>
-                  <td>1</td>
-                  <td><a href="#">NSS drive</a></td>
-                  <td>15</td>
-                  <td>Completed</td>
+                  <td>{{ forloop.counter }}</td>
+                  <td><a href="#">{{drive.drive_name}}</a></td>
+                  <td>{{drive.count}}</td>
+                  <td>{{drive.target}}</td>
               </tr>
-              <tr>
+          {% endfor %}
+              <!-- <tr>
                   <td>2</td>
                   <td><a href="#">RSS drive</a></td>
                   <td>50</td>
@@ -72,7 +74,7 @@
                   <td><a href="#">PICT drive</a></td>
                   <td>5</td>
                   <td>Incomplete</td>
-              </tr>
+              </tr> -->
           </tbody>
       </table>
       </div>

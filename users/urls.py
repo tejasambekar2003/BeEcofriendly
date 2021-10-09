@@ -10,6 +10,7 @@ urlpatterns = [
     path('create-drive/', views.createDrive, name = 'createDrive'),
     path('our-team/', views.ourTeam, name = 'ourTeam'),
     path('drive/join/', views.joinDrive, name = 'joinDrive'),
+    path('drive/<str:drive_pk>', views.drive_home, name = 'driveHome'),
     path('drive/join/<str:drive_pk>', views.indi_drive_join, name = 'join_drive_temp'),
     path('upload/', views.upload, name = 'upload'),
     path('blog/', views.blog_view, name = 'blog'),

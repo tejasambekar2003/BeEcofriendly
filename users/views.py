@@ -1,4 +1,4 @@
-from users.models import Drive, Post
+from users.models import Drive, Post, Profile, Tree
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
@@ -31,7 +31,7 @@ def login(request):
         else:
             return render(request, 'users/home.html', {'message': "Invalid Credentials!"})
     print("not post")
-    # return redirect(reverse("home"))
+    return redirect(reverse("home"))
 
 
 
@@ -46,11 +46,12 @@ def register(request):
 
         err_lst = []
 
-        username = request.POST['insta']
-        fname = request.POST['fullname']
+        username = request.POST['email']
+        fname = request.POST['name']
         email = request.POST['email']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
+        location = request.POST['location']
         hashed_password = make_password(password1)
 
         users = User.objects.all()
@@ -65,6 +66,8 @@ def register(request):
         if len(err_lst) == 0:
             u1 = User(username = username, first_name = fname,  email= email, password = hashed_password)
             u1.save()
+            p1 = Profile(user = u1, location = location)
+            p1.save()
             print("User created successfully")
             return render (request, 'users/register.html', {'success_message': "Registration Succsessful!"})
         else:
@@ -79,7 +82,10 @@ def profile(request):
         return redirect(reverse("home"))
 
     else:
-        return render(request, 'users/profile.html', {'isLoggedIn': True})
+        p = Profile.objects.get(user = request.user)
+        userDrives = request.user.in_drives.all()
+        context = {'profile': p, 'isLoggedIn': True, 'userDrives':userDrives}
+        return render(request, 'users/profile.html', context)
 
 def createDrive(request):
     if not request.user.is_authenticated:
@@ -96,6 +102,8 @@ def createDrive(request):
             d1 = Drive(host =current_user, drive_name = drive, location = location, target = target, desc = desc)
             d1.save()
             d1.members.add(current_user)
+            t1 = Tree(drive=d1, tree_count = 0)
+            t1.save()
 
             return render (request, "users/create_drive.html", {"message":"Drive created successfully"})
         return render(request, "users/create_drive.html")
@@ -140,5 +148,21 @@ def posts(request):
 
 def indi_drive_join(request, drive_pk):
     drive = Drive.objects.get(pk=drive_pk)
-    context = {'drive': drive}
+    inDrive = False
+    if request.user in drive.members.all():
+        inDrive = True
+    context = {'drive': drive, 'inDrive':inDrive}
+    if request.method == 'POST':
+        drive.members.add(request.user)
+        inDrive = True
+        context = {'drive': drive, 'inDrive':inDrive}
+        return render(request, 'users/drive_temp.html', context)
     return render(request, 'users/drive_temp.html', context)
+
+def drive_home(request, drive_pk):
+    drive = Drive.objects.get(pk = drive_pk)
+    drive.count += 5
+    drive.save()
+    context = {'drive' : drive, 'treeCount' : drive.count}
+
+    return render(request, 'users/drive_home.html', context)
