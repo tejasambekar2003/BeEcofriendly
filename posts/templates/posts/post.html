@@ -1,0 +1,17 @@
+<div class="col-sm-4">
+    <div class="card card-custom" style="width: 18rem;">
+        <img src="{{ post.photo.url }}" class="card-img-top" alt="{{ post.caption }}">
+        <div class="card-body">
+            <h5 class="card-title"><a href="{{ post.author.get_absolute_url }}">{{ post.author }}</a></h5>
+            <p class="card-text">{{ post.caption }}</p>
+            <div style="text-align: center;"><a href="#" class="btn btn-success" style="text-align: center;">Like</a>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .card-custom{
+        margin: 10px auto;
+        justify-content: center;
+    }
+</style>

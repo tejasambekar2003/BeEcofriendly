@@ -12,9 +12,9 @@ urlpatterns = [
     path('drive/join/', views.joinDrive, name = 'joinDrive'),
     path('drive/<str:drive_pk>', views.drive_home, name = 'driveHome'),
     path('drive/join/<str:drive_pk>', views.indi_drive_join, name = 'join_drive_temp'),
-    path('upload/', views.upload, name = 'upload'),
-    path('blog/', views.blog_view, name = 'blog'),
-    path('post/', views.posts, name = 'posts'),
+    # path('upload/', views.upload, name = 'upload'),
+    # path('blog/', views.blog_view, name = 'blog'),
+    # path('post/', views.posts, name = 'posts'),
     
     # path('add-participants/', views.add, name = 'add'),
 

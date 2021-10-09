@@ -1,0 +1,29 @@
+.upper-text{
+    font-size: 3rem;
+}
+.lower-text{
+    font-size: 2rem;
+    color: aliceblue;
+}
+.image-custom{
+    filter: brightness(30%);
+    height: 800px;
+}
+.top-text{
+    padding-top: 20px;
+    font-size: 4rem;
+    color: aliceblue;
+    padding-bottom: 50px;
+    margin-right: 50px;
+
+}
+.description-text{
+    color: aliceblue;
+    font-size: 2rem;
+    padding-bottom: 50px;
+}
+.my-btn{
+    margin-bottom: 50px;
+    margin-top: 0px;
+    font-size: 2rem;
+}

@@ -34,6 +34,7 @@ class Tree(models.Model):
 
 
 
+<<<<<<< HEAD
 class Post(models.Model):
     author = models.ForeignKey(User,null=True,  on_delete=CASCADE)
     drive = models.ForeignKey(Drive,null=True, on_delete=CASCADE)
@@ -43,4 +44,6 @@ class Post(models.Model):
 
     def _str_(self):
         return str(self.pk)
+=======
+>>>>>>> 2db693995d60cdcf696694f479bf3f5a855d2bd8
 
