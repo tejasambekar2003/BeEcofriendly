@@ -1,25 +1,25 @@
-{% extends 'users/layout.html' %}
-{% load static%}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="driveInfo.css">
     <title></title>
 </head>
 <body>
     <div class="">
         <div class="card">
-            <!-- <img class="image-custom" src="./R.jpg"/> -->
+            <img class="image-custom" src="./R.jpg"/>
             <div class="card-img-overlay">
-                <span class="top-text">{{drive.drive_name}}</span><span><button type="button" class="btn btn-dark my-btn">Joined</button></span>
-                <div class="description-text">{{drive.desc}} </div>
+                <span class="top-text">PICT DRIVE</span><span><button type="button" class="btn btn-dark my-btn">Joined</button></span>
+                <div class="description-text">The motto behind this mass plantation drive was to make villagers aware of the value of a green and healthy environment, more importantly, the importance of beautifying a waste barren land into an attraction spot not only for villagers but also for various species of birds. </div>
                 <div class="grid" >
                     <div class="row">
-                    <div class="col-4"><div class="upper-text"><font color="green">{{drive.location}}</font></div><div class="lower-text">Location</div></div>
-                    <div class="col-4"><div class="upper-text"><font color="green">{{drive.target}}</font></div><div class="lower-text">Target</div></div>
-                    <div class="col-4"><div class="upper-text"><font color="green">30</font></div><div class="lower-text">Planted</div></div>
+                    <div class="col-4"><div class="upper-text"><font color="green">Pune</font></div><div class="lower-text">Location</div></div>
+                    <div class="col-4"><div class="upper-text"><font color="green">25000</font></div><div class="lower-text">Target</div></div>
+                    <div class="col-4"><div class="upper-text"><font color="green">3000</font></div><div class="lower-text">Planted</div></div>
                 </div>
             </div>
             <div class="grid">
@@ -65,35 +65,4 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>        
 </body>
-<style>
-    .upper-text{
-    font-size: 3rem;
-}
-.lower-text{
-    font-size: 2rem;
-    color: aliceblue;
-}
-.image-custom{
-    filter: brightness(30%);
-    height: 800px;
-}
-.top-text{
-    padding-top: 20px;
-    font-size: 4rem;
-    color: aliceblue;
-    padding-bottom: 50px;
-    margin-right: 50px;
-
-}
-.description-text{
-    color: aliceblue;
-    font-size: 2rem;
-    padding-bottom: 50px;
-}
-.my-btn{
-    margin-bottom: 50px;
-    margin-top: 0px;
-    font-size: 2rem;
-}
-</style>
-{% endblock  %}
+</html>

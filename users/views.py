@@ -1,10 +1,10 @@
-from users.models import Drive, Post
+from users.models import Drive
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.urls import reverse
 from django.contrib.auth import authenticate, login as login_User, logout as logout_User
-from .forms import ImageForm
+# from .forms import ImageForm
 
 
 
@@ -108,34 +108,34 @@ def ourTeam(request):
 
 
 
-def upload(request):
-    """Process images uploaded by users"""
-    if request.method == 'POST':
-        caption = request.POST.get('caption')
-        driveName = request.POST.get('driveName')
-        post = Post.objects.create(caption=caption) #img=img
-        post.save()
-        form = ImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            img_obj = form.instance
-            img_obj = request.FILES.get('image')
-            return render(request, 'users/upload.html', {'form': form, 'img_obj': img_obj})
-    else:
-        form = ImageForm()
-    return render(request, 'users/upload.html', {'form': form})
+# def upload(request):
+#     """Process images uploaded by users"""
+#     if request.method == 'POST':
+#         caption = request.POST.get('caption')
+#         driveName = request.POST.get('driveName')
+#         post = Post.objects.create(caption=caption) #img=img
+#         post.save()
+#         form = ImageForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             img_obj = form.instance
+#             img_obj = request.FILES.get('image')
+#             return render(request, 'users/upload.html', {'form': form, 'img_obj': img_obj})
+#     else:
+#         form = ImageForm()
+#     return render(request, 'users/upload.html', {'form': form})
 
-def blog_view(request):
-    posts = Post.objects.all()
-    return render(request, 'users/blog.html', {'posts':posts})
+# def blog_view(request):
+#     posts = Post.objects.all()
+#     return render(request, 'users/blog.html', {'posts':posts})
 
-def posts(request):
-    current_user = request.user
-    context = {
-        'posts' : Post.objects.all(),
-        'users' : User.objects.all()
-    }
-    return render(request, 'users/blog.html', context)
+# def posts(request):
+#     current_user = request.user
+#     context = {
+#         'posts' : Post.objects.all(),
+#         'users' : User.objects.all()
+#     }
+#     return render(request, 'users/blog.html', context)
 
 def indi_drive_join(request, drive_pk):
     drive = Drive.objects.get(pk=drive_pk)
