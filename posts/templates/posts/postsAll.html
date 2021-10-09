@@ -1,0 +1,29 @@
+{% extends "users/layout.html" %}
+{% block content %}
+
+    <div class="container">
+        <div class="grid grid-custom">
+            <div class="row">
+                {% if user.is_authenticated %}
+                {% for post in posts  %}
+                    {% include 'posts/post.html' %}
+                {% endfor %}
+            {% else %}
+                <p>Welcome, new user. Please log in.</p>
+            {% endif %}
+        
+        </div></div></div>
+<style>
+    .grid-custom{
+        justify-content: space-evenly;
+    }
+    body{
+        background-image: url(https://t4.ftcdn.net/jpg/02/91/88/37/360_F_291883797_GGmcj8bGJpbTmZhErvS92ZEbGi0D512B.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+</style>
+{% endblock %}
+

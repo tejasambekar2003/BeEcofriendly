@@ -28,12 +28,4 @@ class Drive(models.Model):
 
 
 
-class Post(models.Model):
-    author = models.ForeignKey(User,null=True,  on_delete=CASCADE)
-    drive = models.ForeignKey(Drive,null=True, on_delete=CASCADE)
-    caption = models.CharField(default='', max_length=100, null=True)
-    # date_posted = models.DateTimeField(default=datetime.datetime.now())
-    image = models.ImageField(upload_to='images')
 
-    def _str_(self):
-        return str(self.pk)
