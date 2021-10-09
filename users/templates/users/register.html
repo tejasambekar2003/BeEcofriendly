@@ -2,6 +2,105 @@
 
 {% block content %} 
 
-<h1> this is register </h1>
+<style>
+    
+    h2{
+        text-align: center;
+    } 
+    
+    form {
+        border: 3px solid #0a0a0a;
+        width: 50%;
+        margin-left: 25%;
+    }
+    
+      
+    input[type=email],
+    input[type=password],input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+      
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+      
+    button:hover {
+        opacity: 0.8;
+    }
+    
+      
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #4CAF50;
+        background-origin: border-box;
+    }
+      
+    .container {
+        padding: 16px;
+    }
+    
+      
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+    
+      
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+</style>
+  
+<body>
+  
+    <h2 style="font-size: 2.5rem;" >SignUp</h2>
+    <!--Step 1 : Adding HTML-->
+    <form action="/action_page.php ">
+  
+        <div class="container">
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="Name" required>
+      
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+      
+            <label for="Location"><b>Location</b></label>
+            <input type="text" placeholder="Enter Location" name="Location" required>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+      
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+  
+            <button type="submit">Signup</button>
+            <input type="checkbox" checked="checked"> Remember me
+        </div>
+  
+        <div class="container" style="background-color:#f1f1f1">
+            <a>Already Signup?</a>
+            <span class="cancelbtn"> <a href="#" style="text-decoration: none;color: black;">Signin</a></span>
+        </div>
+    </form>
 
 {% endblock %}
