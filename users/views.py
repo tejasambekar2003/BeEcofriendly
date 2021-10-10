@@ -26,7 +26,7 @@ def login(request):
             if user is not None:
                 print("user is not none true")
                 login_User(request, user)
-                return redirect(reverse("home"))
+                return render(request, "users/home.html", {"message":"Login Succesful."})
             else:
                 print("error message wala")
                 return render(request, 'users/home.html', {'message': "Invalid Credentials!"})
